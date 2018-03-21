@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo $HOME
+
+set -x
+echo $PATH
+set +x
+
+echo $TERM
+echo The services started on a runlevel 3 are; ls /etc/rc3.d/S*
+

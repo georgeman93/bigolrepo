@@ -1,0 +1,30 @@
+#!/bin/bash
+#the user enter a bunch of their favourite modes of transportation as options
+
+
+echo the first argument is $1
+shift
+echo now after shift, the first argument is $1
+echo it looks lke the zeroth argument isnt touched, imagine the script name eating the arguments
+echo '$10 doesnt work, it get interpreted as $1 concatenated with 0'
+if [ "$1" = "-c" ]
+then
+	echo "the -c option was used, something special will happen"
+	carsshazam=1
+	shift
+fi
+
+OLDIFS=IFS
+IFS=':'
+echo '$* is the arguments strung together, seperated by the IFS variable'
+#the IFS variable doesnt take effect unless you use quotes
+#if you change IFS on a single line in an interactive shell it doesnt take effect, you wold need to export the change
+echo "for instance $*"
+echo 
+echo '$@ are the arguements expanded out as seperate words'
+echo "for instance $@"
+IFS=OLDIFS
+
+#we can check if a variable exists or not using if [ "x$variable" = "x" ]
+#this is useful for creating flag conditions that take effect later on in the script, this way
+#we avoid overbearing if structures

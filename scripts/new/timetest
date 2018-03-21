@@ -1,0 +1,11 @@
+#!/bin/bash
+
+ 
+echo `time forg ((i=0;i<=1000;i++))
+do
+	for ((j=0;j<=1000;j++))
+	do
+		a=1
+	done
+done`
+
